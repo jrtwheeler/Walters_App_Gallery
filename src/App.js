@@ -1,7 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import Header from "./components/Header";
-import Directory from "./components/Directory";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Landing from "./pages/Landing";
+import SignUp from "./pages/SignUp";
+import LogIn from "./pages/LogIn";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
@@ -11,16 +14,18 @@ library.add(fab, faNewspaper)
 
 function App() {
   return (
-    <Wrapper>
     <Router>
       <div>
-        <Header>Walters App Gallery</Header>
-      </div>
-      <div>
-      <Directory/>
+        <NavBar />
+        <Wrapper>
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/landing" component={Landing} />
+          <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/login" component={LogIn} />
+        </Wrapper>
+        <Footer />
       </div>
     </Router>
-    </Wrapper>
   );
 }
 

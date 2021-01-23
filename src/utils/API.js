@@ -6,7 +6,7 @@ const KEY = "apikey=9O0bCwuMxTEBqTM1j2rJixcd0w4kuBFdCNCXJyNSGuGhtcS5QUj3gq5ClMaF
 export default {
   getObjects: function () {
      var search = axios.get(BASEURL + KEY);
-     console.log(search)
-     return search
+     console.log(search);
+     return search;
   }
 }
