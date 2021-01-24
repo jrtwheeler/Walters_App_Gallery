@@ -3,7 +3,7 @@ import React from "react";
 function SignUp() {
   return (
     <div>
-      <h1 className="text-center">SignUp</h1>
+      <h1 className="text-center">SignUp Page</h1>
       <p>
         Lorem ipsum dolor sit amet, est ut enim consequat. Nostrum fastidii partiendo sed ne, no
         mutat ludus aperiri mea, per in choro dolorem electram. Invidunt reprimique assueverit quo
