@@ -3,9 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Landing from "./pages/Landing";
 import SignUp from "./pages/SignUp";
 import LogIn from "./pages/LogIn";
-
-import NavigationBar from "./components/NavigationBar";
 import SideBar from "./components/SideBar";
+import NavigationBar from "./components/NavigationBar";
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
 import { library } from '@fortawesome/fontawesome-svg-core'

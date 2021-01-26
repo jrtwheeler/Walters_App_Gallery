@@ -19,6 +19,7 @@ const Styles = styled.div`
     right: 25%;
   }
 `;
+
 function NavigationBar() {
   return (
     <Styles>
@@ -38,5 +39,4 @@ function NavigationBar() {
     </Styles>
   );
 }
-
 export default NavigationBar;
