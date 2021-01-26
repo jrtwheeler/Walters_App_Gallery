@@ -40,10 +40,10 @@ function NavigationBar() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
             <Nav.Item>
-              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/signup">SignUp</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link href="/">About</Nav.Link>
+              <Nav.Link href="/login">LogIn</Nav.Link>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>
