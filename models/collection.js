@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // Model for user-created collection
-const collectionSchema = new mongoose.Schema({
+const collectionSchema = new Schema({
   // Name of collection
   title: {
     type: String,
