@@ -6,60 +6,58 @@ import SearchForm from "../SearchForm";
 import Container from "../Container";
 import API from "../../utils/API";
 
-class DataBaseContainer extends Component {
+class Directory extends Component {
   state = {
     search: "",
     error: "",
     results: [],
   };
 
-  // When the component mounts, get a list of twenty five randomly generated employees update this.state.results
   componentDidMount() {
-    this.startArchive()
+    API.getResults("whistler")
+      .then((res) => this.setState({ results: res.Items }))
+      .catch((err) => console.log(err));
   }
 
   searchArchive = () => {
-
-    API.getObjects()
+    API.getResults(this.state.search)
       .then((res) => this.setState({ results: res.data.Items }))
       .catch((err) => console.log(err));
   };
 
-  startArchive = () => {
-    API.getObjects()
-      .then((res) => this.setState({ results: res.data.Items }))
-      .catch((err) => console.log(err));
-  };
+  // startArchive = () => {
+  //   API.getResults()
+  //     .then((res) => this.setState({ results: res.data.Items }))
+  //     .catch((err) => console.log(err));
+  // };
 
-  handleInputChange = event => {
+  handleInputChange = (event) => {
     const value = event.target.value;
     const name = event.target.name;
-    console.log(event.target)
-    console.log(value)
+    console.log(event.target);
+    console.log(value);
     this.setState({
-      [name]: value
+      [name]: value,
     });
   };
 
-  handleFormSubmit = event => {
+  handleFormSubmit = (event) => {
     event.preventDefault();
     this.searchArchive(this.state.search);
   };
 
   render() {
-    console.log(this.state.search)
+    console.log(this.state.search);
     return (
       <Container>
         <Row>
-            <SearchForm
-              search={this.state.search}
-              handleInputChange={this.handleInputChange}
-              handleFormSubmit={this.handleFormSubmit}
-            />
+          <SearchForm
+            search={this.state.search}
+            handleInputChange={this.handleInputChange}
+            handleFormSubmit={this.handleFormSubmit}
+          />
           <Col size="md-12">
-            <Table
-              results={this.state.results}
-            />
+            <Table results={this.state.results} />
           </Col>
         </Row>
       </Container>
@@ -67,4 +65,4 @@ class DataBaseContainer extends Component {
   }
 }
 
-export default DataBaseContainer;
+export default Directory;
